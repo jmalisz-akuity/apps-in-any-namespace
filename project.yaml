@@ -7,6 +7,7 @@ spec:
   sourceRepos:
     - '*'
   destinations:
-    - '*'
+    - server: '*'
+      namespace: '*'
   sourceNamespaces:
     - mynamespace
