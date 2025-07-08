@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: mynamespace
+spec:
+  destination:
+    namespace: guestbook
+    name: blake
+  sources:
+    - path: guestbook
+      repoURL: https://github.com/argoproj/argocd-example-apps
+      targetRevision: HEAD
+  project: mynamespace
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
