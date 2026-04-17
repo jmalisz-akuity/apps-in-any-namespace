@@ -5,7 +5,7 @@ metadata:
   namespace: test-namespace
 spec:
   destination:
-    namespace: guestbook
+    namespace: test-namespace
     server: http://cluster-demo:8001
   sources:
     - path: guestbook
